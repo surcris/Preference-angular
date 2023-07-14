@@ -1,0 +1,150 @@
+.container-admin{
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+}
+.container-card{
+    width: 100%;
+    min-height: 350px;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-part,.card-date ,.card-calend, .card-stat{
+    height: 100%;
+    width: 100%;
+    max-height: 400px;
+    /* min-width: fit-content; */
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+        
+    border-radius: 25px;
+}
+.card-date{
+    background-color: rgb(211, 209, 69);
+}
+.card-date p:nth-child(1){
+    height: 20%;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.date-jour{
+    font-size: 11em;
+    text-align: center;
+    flex: 1;
+}
+.card-date p:nth-child(1),.card-date p:nth-child(3){
+    font-size: clamp(1em, 4vw, 2em);
+    height: 20%;
+}
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||| */
+.card-calend{
+    background-color: rgb(175, 175, 175);
+ 
+}
+.calend-top{
+    height: 20%;
+    display: flex;
+    align-items: flex-start;
+}
+.calend-top p{
+    font-size: 25px;
+    font-weight: 600;
+    
+}
+.container-mini-card{
+    height: 60%;
+    display: grid;
+    grid-template-columns: repeat(3, 75px);
+    grid-gap: 40px;
+    
+    align-items: center;
+    flex-direction: row;
+}
+.mini-card{
+    height: 100px;
+    width: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 1px solid rgb(54, 54, 54);
+}
+.mini-date{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.calend-bot{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    font-size: clamp(1em, 4vw, 2em);
+}
+/* |||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+.card-part{
+    background-color: rgb(66, 66, 66);
+    color: rgb(175, 175, 175);
+}
+.container-part{
+    
+    flex: 1;
+}
+.part-top{
+    
+    font-size: 25px;
+    font-weight: 600;
+}
+.part-bot {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.part-bot .container-part-bot{
+    
+    width: 80%;
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.container-part-bot div:nth-child(1){
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.container-part-bot div:nth-child(2){
+    width: 100%;
+    border-top: 1px solid rgb(32, 32, 32);
+}
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||| */
+.card-stat{
+    background-color: rgb(175, 175, 175);
+    
+}
+.card-titre{
+    font-size: 25px;
+    font-weight: 600;
+    height: 20%;
+}
+.card-stat div{
+    height: 80%;
+}

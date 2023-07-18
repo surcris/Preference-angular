@@ -19,7 +19,7 @@ export class ChartService {
   drawLineGrille( y: number, color: String) {
     this.ctx.beginPath();
     this.ctx.strokeStyle = color;
-    this.ctx.moveTo(30,y);
+    this.ctx.moveTo(10,y);
     this.ctx.lineTo(this.canvas.height,y);
     this.ctx.stroke();
   }
@@ -70,15 +70,15 @@ export class ChartService {
     //! AXE X
     this.ctx.beginPath();
     this.ctx.strokeStyle = 'black';
-    this.ctx.moveTo(30,this.canvas.height-30);
+    this.ctx.moveTo(10,this.canvas.height-30);
     this.ctx.lineTo(this.canvas.width,this.canvas.height-30);
     this.ctx.stroke();
 
     //! AXE Y
     this.ctx.beginPath();
     this.ctx.strokeStyle = 'black';
-    this.ctx.moveTo(30,this.canvas.height-30);
-    this.ctx.lineTo(30,10);
+    this.ctx.moveTo(10,this.canvas.height-30);
+    this.ctx.lineTo(10,10);
     this.ctx.stroke();
 
     //! ligne dans le graph 

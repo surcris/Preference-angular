@@ -1,0 +1,35 @@
+<nav class="navbar-container">
+    <div class="navbar-titre">
+        <h1>Titre</h1>
+    </div>
+    
+    <div class="navbar-profil">
+        <img src="../../assets/Sangohan.png" alt="">
+        <p>Profil</p>
+    </div>
+    <div class="navbar-menu">
+        <div class="menu-content">
+            <p class="logo-element">1</p>
+            <p class="p-element">Dashboard</p>
+        </div>
+        <div class="menu-content">
+            <p class="logo-element">1</p>
+            <p class="p-element">Activity</p>
+        </div>
+        <div class="menu-content">
+            <p class="logo-element">1</p>
+            <p class="p-element">Schedule</p>
+        </div>
+        <div class="menu-content"> 
+            <p class="logo-element">1</p>
+            <p class="p-element">Setting</p>
+        </div>
+    </div>
+    <div class="btn-darkmode">
+        <div (click)="darkMode =! darkMode" [class.dark-mode]="darkMode"  class="trait">
+            <i *ngIf="darkMode" [ngStyle]="{'background-color' : 'rgb(34, 34, 34)','color':'rgb(212, 212, 212)'}" class="fa-solid fa-moon"></i>
+            <i *ngIf="darkMode == false" [ngStyle]="{'background-color' : 'rgb(211, 209, 69)','color':'rgb(43, 43, 43)'}" class="fa-solid fa-sun"></i>
+            
+        </div>
+    </div>
+</nav>

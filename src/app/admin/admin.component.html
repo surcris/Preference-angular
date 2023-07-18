@@ -1,58 +1,80 @@
-<div class="container-admin">
 
-    <div class="container-card">
-        <div class="card-date">
-            <p>Date</p>
-            <h1 class="date-jour">{{d.getDate()}}</h1>
-            <p>{{d.getDate()}} {{d.getMonth()+1}} {{d.getFullYear()}} </p>
+<div class="page-admin">
+
+    <app-navbar></app-navbar>
+
+    <div class="main-admin">
+        <div class="header-admin">
+            <div>
+                <p>TItre</p>
+            </div>
+            <div>
+                <p>Recherche</p>
+            </div>
+            <div>
+                <p>Déconnexion</p>
+            </div>
         </div>
-    </div>
+        <div class="container-admin">
 
-    <div class="container-card">
-        <div class="card-calend">
-            <div class="calend-top"><p>Date</p></div>
-            <div class="container-mini-card">
-                <div class="mini-card">
-                    <p>{{listJour[prec]}}</p>
-                    <p class="mini-date">{{listDateDay[0]}}</p>
-                </div>
-                <div [ngStyle]="{backgroundColor : 'rgb(211, 209, 69)',border: 'none'}" class="mini-card">
-                    <p>{{listJour[actu]}}</p>
-                    <p class="mini-date" >{{listDateDay[1]}}</p>
-                </div>
-                <div class="mini-card">
-                    <p>{{listJour[nexte]}}</p>
-                    <p class="mini-date">{{listDateDay[2]}}</p>
+            <div class="container-card">
+                <div class="card-date">
+                    <p>Date</p>
+                    <h1 class="date-jour">{{d.getDate()}}</h1>
+                    <p>{{d.getDate()}} {{d.getMonth()+1}} {{d.getFullYear()}} </p>
                 </div>
             </div>
-            <div class="calend-bot"><p></p></div>
-        </div>
-    </div>
-    
-    <div class="container-card">
-        <div class="card-part">
-            <div class="part-top"><p>Graph Circulaire</p></div>
-            <div class="container-part">
-                <canvas id="myChart"></canvas>
-            </div>
-            <div class="part-bot">
-                <div class="container-part-bot" *ngFor="let part of listPart; index as i">
-                    <div>
-                        <p>{{part.name}} </p>
-                        <p>{{part.part}}%</p>
+
+            <div class="container-card">
+                <div class="card-calend">
+                    <div class="calend-top"><p>Date</p></div>
+                    <div class="container-mini-card">
+                        <div class="mini-card">
+                            <p>{{listJour[prec]}}</p>
+                            <p class="mini-date">{{listDateDay[0]}}</p>
+                        </div>
+                        <div [ngStyle]="{backgroundColor : 'rgb(211, 209, 69)',border: 'none'}" class="mini-card">
+                            <p>{{listJour[actu]}}</p>
+                            <p class="mini-date" >{{listDateDay[1]}}</p>
+                        </div>
+                        <div class="mini-card">
+                            <p>{{listJour[nexte]}}</p>
+                            <p class="mini-date">{{listDateDay[2]}}</p>
+                        </div>
                     </div>
-                    <div *ngIf="i < listPart.length - 1"></div>
+                    <div class="calend-bot"><p></p></div>
                 </div>
-                
+            </div>
+            
+            <div class="container-card">
+                <div class="card-part">
+                    <div class="part-top"><p>Graph Circulaire</p></div>
+                    <div class="container-part">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <div class="part-bot">
+                        <div class="container-part-bot" *ngFor="let part of listPart; index as i">
+                            <div>
+                                <p>{{part.name}} </p>
+                                <p>{{part.part}}%</p>
+                            </div>
+                            <div *ngIf="i < listPart.length - 1"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-card">
+                <div class="card-stat">
+                    <p class="card-titre">Statistique</p>
+                    <div>
+                        <canvas id="myStat"></canvas>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="container-card">
-        <div class="card-stat">
-            <p class="card-titre">Statistique</p>
-            <canvas id="myStat"></canvas>
-        </div>
-    </div>
 </div>
-

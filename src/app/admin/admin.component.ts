@@ -1,6 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import { ChartService } from '../chart.service';
 import { Chart, registerables } from 'chart.js';
+import { EtatModeService } from '../etat-mode.service';
+import { Observable } from 'rxjs';
 Chart.register(...registerables);
 
 @Component({
@@ -40,12 +42,26 @@ export class AdminComponent implements OnInit{
     },
     
   ]
-  constructor(private chartService:ChartService){
-    
+  public darkMode: Observable<string>;
+  // public darkMode: boolean;
+  constructor(private chartService:ChartService,private etatMode:EtatModeService){
+    this.darkMode = new Observable<string>((observer) => {
+      // Ici, vous pouvez émettre des valeurs ou effectuer des actions pour surveiller la valeur
+      // Par exemple, vous pouvez utiliser setInterval pour émettre régulièrement de nouvelles valeurs
+      const intervalId = setInterval(() => {
+        observer.next('Nouvelle valeur');
+      }, 1000);
+  
+      // N'oubliez pas d'arrêter l'intervalle lors du désabonnement
+      return () => {
+        clearInterval(intervalId);
+      };
+    });
   }
   
 
   ngOnInit(): void {
+    // this.darkMode = this.etatMode.darkMode;
     // this.actu = 0
     this.initDate();
     this.chartService.initCanvas("myChart");

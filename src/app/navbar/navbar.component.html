@@ -1,4 +1,4 @@
-<nav class="navbar-container">
+<nav class="navbar-container" [style.background-color]="darkMode ? 'rgb(212, 212, 212)' : 'rgb(34, 34, 34)' "  [style.color]="darkMode ? 'rgb(34, 34, 34)' : 'rgb(212, 212, 212)'">
     <div class="navbar-titre">
         <h1>Titre</h1>
     </div>
@@ -8,28 +8,27 @@
         <p>Profil</p>
     </div>
     <div class="navbar-menu">
-        <div class="menu-content">
+        <div [ngClass]="getClassByDarkMode()" class="menu-content">
             <p class="logo-element">1</p>
-            <p class="p-element">Dashboard</p>
+            <p  class="p-element">Dashboard</p>
         </div>
-        <div class="menu-content">
+        <div [ngClass]="getClassByDarkMode()" class="menu-content">
             <p class="logo-element">1</p>
-            <p class="p-element">Activity</p>
+            <p  class="p-element">Activity</p>
         </div>
-        <div class="menu-content">
+        <div [ngClass]="getClassByDarkMode()" class="menu-content">
             <p class="logo-element">1</p>
-            <p class="p-element">Schedule</p>
+            <p  class="p-element">Schedule</p>
         </div>
-        <div class="menu-content"> 
+        <div [ngClass]="getClassByDarkMode()" class="menu-content"> 
             <p class="logo-element">1</p>
-            <p class="p-element">Setting</p>
+            <p  class="p-element">Setting</p>
         </div>
     </div>
     <div class="btn-darkmode">
-        <div (click)="darkMode =! darkMode" [class.dark-mode]="darkMode"  class="trait">
+        <div (click)="affDarkMode()" [class.dark-mode]="darkMode"  class="trait">
             <i *ngIf="darkMode" [ngStyle]="{'background-color' : 'rgb(34, 34, 34)','color':'rgb(212, 212, 212)'}" class="fa-solid fa-moon"></i>
             <i *ngIf="darkMode == false" [ngStyle]="{'background-color' : 'rgb(211, 209, 69)','color':'rgb(43, 43, 43)'}" class="fa-solid fa-sun"></i>
-            
         </div>
     </div>
 </nav>
